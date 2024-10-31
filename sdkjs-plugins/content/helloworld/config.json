@@ -1,24 +1,24 @@
 {
   "name": "contentControlListener",
   "guid": "asc.{40116F8C-5EBE-4D87-B544-4B7F102F122B}",
+	"version": "1.0.0",
   "baseUrl": "",
   "variations": [
     {
       "description": "contentControlListener",
       "url": "index.html",
       "icons": [
-        "icon.png",
-        "icon@2x.png"
+        "resources/light/icon.png", "resources/light/icon@2x.png"
       ],
       "isViewer": true,
       "EditorsSupport": [
         "word"
       ],
       "isSystem": true,
-      "isVisual": false,
+      "isVisual": true,
       "isModal": false,
-      "isInsideMode": false,
-      "initDataType": "none",
+      "isInsideMode": true,
+      "initDataType": "text",
       "initData": "",
       "buttons": [],
       "events": []
