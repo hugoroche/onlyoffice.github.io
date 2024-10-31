@@ -84,6 +84,7 @@ function getMessage(key) {
 			oDocument.InsertContent([oSubBlockLvlSdt]);\r\n\
             var aContentControls = oDocument.GetAllContentControls();\r\n\
             for (var i = 0; i < aContentControls.length; i++) {\r\n\
+                console.log(\"YOUPI 3 \", "+bloubId+");\r\n\
                 console.log(\"YOUPI 2 \", aContentControls[i].ye.ga.Wa);\r\n\
             }\r\n\
 			";
