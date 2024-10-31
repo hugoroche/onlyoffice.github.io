@@ -80,7 +80,7 @@ function getMessage(key) {
 			var oParagraph = Api.CreateParagraph();\r\n\
 			var oRun = oParagraph.AddText('Hello World');\r\n\
 			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
-            var oSubBlockLvlSdt =oRun.InsertInContentControl(1);\r\n\
+            var oSubBlockLvlSdt =oParagraph.InsertInContentControl(1);\r\n\
 			oDocument.InsertContent([oSubBlockLvlSdt]);\r\n\
 			";
         _script = _script.replaceAll("\r\n", "");
@@ -97,10 +97,10 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("25");
+        console.log("26");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
-        window.Asc.plugin.executeMethod("AddContentControl", [2, {
+        /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
             "Tag": "gap;lkasf",
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
@@ -109,7 +109,7 @@ function getMessage(key) {
             "Color.R": 255,
             "Color.G": 124,
             "Color.B": 74
-        }]);
+        }]);*/
 	};
 
     window.Asc.plugin.onThemeChanged = function(theme)
