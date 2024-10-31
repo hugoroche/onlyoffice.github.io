@@ -83,7 +83,9 @@ function getMessage(key) {
             var oSubBlockLvlSdt =oParagraph.InsertInContentControl(1);\r\n\
 			oDocument.InsertContent([oSubBlockLvlSdt]);\r\n\
             var aContentControls = oDocument.GetAllContentControls();\r\n\
-            console.log(\"YOUPI 2 \" + aContentControls.filter(c=> c.ye.ga.Wa === "+id+"));\r\n\
+            for (var i = 0; i < aContentControls.length; i++) {\r\n\
+                console.log(\"YOUPI 2 \" + aContentControls[i].ge.ye.ga.Wa);\r\n\
+            }\r\n\
 			";
         _script = _script.replaceAll("\r\n", "");
         _script = _script.replaceAll("\n", ""); 
@@ -100,7 +102,7 @@ function getMessage(key) {
         };
     
 
-        console.log("31");
+        console.log("32");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
