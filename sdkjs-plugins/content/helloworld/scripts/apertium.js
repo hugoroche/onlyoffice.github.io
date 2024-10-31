@@ -90,18 +90,19 @@ function getMessage(key) {
                 "Lock": 3,
                 "InternalId": crypto.randomUUID(),
                 "PlaceholderText": "Patient - Age"
-            }
+            },
+            "Script": ""
         };
 
-        console.log("13");
+        console.log("14");
         // replace content
-        //window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
-        window.Asc.plugin.executeMethod("AddContentControl", [2, {
+        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
+        /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
             "Tag": "gap;lkasf",
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
             "PlaceHolderText": "Testing le test"
-        }]);
+        }]);*/
 	};
 
     window.Asc.plugin.onThemeChanged = function(theme)
