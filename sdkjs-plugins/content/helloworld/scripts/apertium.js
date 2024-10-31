@@ -93,9 +93,17 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("5");
+        var newContentControl = {
+            "Tag": "gap;patient",
+            "Lock": 3,
+            "InternalId": crypto.randomUUID(),
+            "PlaceHolderText": "AUAUAUAU",
+            "Appearance": 1
+        };
+
+        console.log("6");
         // replace content
-        window.Asc.plugin.executeMethod("AddContentControl", 1, _scriptObject);
+        window.Asc.plugin.executeMethod("AddContentControl", 1, newContentControl);
 	};
 
     window.Asc.plugin.onThemeChanged = function(theme)
