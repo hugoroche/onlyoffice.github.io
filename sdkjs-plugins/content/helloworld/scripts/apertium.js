@@ -74,6 +74,7 @@ function getMessage(key) {
 	window.Asc.plugin.init = function(text)
 	{
         console.log("ALLO SUPER ALLO ENORME ALLO");
+        console.log("BLOUP");
         var _script = "\r\n\
 			var oDocument = Api.GetDocument();\r\n\
 			var oParagraph = Api.CreateParagraph();\r\n\
