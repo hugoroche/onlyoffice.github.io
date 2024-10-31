@@ -80,12 +80,11 @@ function getMessage(key) {
 			var oParagraph = Api.CreateParagraph();
 			var oRun = oParagraph.AddText('Hello World');
 			oRun.SetShd("clear",255, 124, 74);
-            var oSubBlockLvlSdt =oParagraph.InsertInContentControl(1);
-			oDocument.InsertContent([oSubBlockLvlSdt]);
             var aContentControls = oDocument.GetAllContentControls();
             for (var i = 0; i < aContentControls.length; i++) {
-                if( aContentControls[i].ye.ga.Wa === "${bloubId}"){
-                    console.log("YOUPI 2 ", aContentControls[i].ye.ga.Wa);
+                if(aContentControls[i].ye.ga.Wa === "${bloubId}"){
+                    console.log("YOUPI 2 ");
+                    aContentControls[i].addElement(oRun);
                 }
             }
         `;
@@ -102,7 +101,7 @@ function getMessage(key) {
         };
     
 
-        console.log("38");
+        console.log("39");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
