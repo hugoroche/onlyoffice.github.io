@@ -93,10 +93,10 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("10");
+        console.log("11");
         // replace content
-        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
-        window.Asc.plugin.executeMethod("AddContentControl", [1, {
+        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
+        window.Asc.plugin.executeMethod("AddContentControl", [2, {
             "Tag": "gap;lkasf",
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
