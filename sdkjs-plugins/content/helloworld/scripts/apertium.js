@@ -74,6 +74,31 @@ function getMessage(key) {
 	window.Asc.plugin.init = function(text)
 	{
         console.log("ALLO SUPER ALLO ENORME ALLO");
+        var _script = "\r\n\
+			var oDocument = Api.GetDocument();\r\n\
+			var oParagraph = Api.CreateParagraph();\r\n\
+			var oRun = oParagraph.AddText('Hello World');\r\n\
+			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
+			oDocument.InsertContent([oParagraph], true);\r\n\
+			";
+        
+        console.log("ICI");
+        _script = _script.replaceAll("\r\n", "");
+        _script = _script.replaceAll("\n", "");
+        console.log("LA");
+
+        var _scriptObject = {
+            "Props": {
+                "Tag": "gap;patient",
+                "Lock": 3,
+                "InternalId": crypto.randomUUID()
+            },
+            "Script": _script
+        };
+
+        console.log("ET ENFIN ICI");
+        // replace content
+        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
 	};
 
     window.Asc.plugin.onThemeChanged = function(theme)
