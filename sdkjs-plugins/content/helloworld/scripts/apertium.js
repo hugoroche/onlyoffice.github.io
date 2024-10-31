@@ -74,7 +74,7 @@ function getMessage(key) {
 	window.Asc.plugin.init = function(text)
 	{
         console.log("ALLO SUPER ALLO ENORME ALLO");
-        const bloubId = crypto.randomUUID();
+        const contentControlId = crypto.randomUUID();
         var _script = `
         var oDocument = Api.GetDocument();
 			var oParagraph = Api.CreateParagraph();
@@ -82,9 +82,9 @@ function getMessage(key) {
 			oRun.SetShd("clear",255, 124, 74);
             var aContentControls = oDocument.GetAllContentControls();
             for (var i = 0; i < aContentControls.length; i++) {
-                if(aContentControls[i].ye.ga.Wa === "${bloubId}"){
-                    console.log("YOUPI 2 ");
-                    aContentControls[i].InsertContent(oRun);
+                if(aContentControls[i].ye.ga.Wa === "${contentControlId}"){
+                    console.log("YOUPI 2 ", aContentControls[i]);
+                    aContentControls[i].AddElement(oRun);
                 }
             }
         `;
@@ -94,14 +94,14 @@ function getMessage(key) {
                 "Tag": "gap;patient",
                 "Lock": 3,
                 "InternalId": crypto.randomUUID(),
-                "Id": bloubId,
+                "Id": contentControlId,
                 "PlaceholderText": "Patient - Age"
             },
             "Script": _script
         };
     
 
-        console.log("41");
+        console.log("42");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
