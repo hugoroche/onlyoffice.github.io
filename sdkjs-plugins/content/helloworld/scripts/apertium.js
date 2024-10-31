@@ -88,12 +88,12 @@ function getMessage(key) {
             "Props": {
                 "Tag": "gap;patient",
                 "Lock": 3,
-                "InternalId": crypto.randomUUID()
-            },
-            "Script": _script
+                "InternalId": crypto.randomUUID(),
+                "PlaceholderText": "Patient - Age"
+            }
         };
 
-        console.log("11");
+        console.log("12");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
         window.Asc.plugin.executeMethod("AddContentControl", [2, {
