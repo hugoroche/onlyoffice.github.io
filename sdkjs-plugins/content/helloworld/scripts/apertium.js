@@ -80,6 +80,7 @@ function getMessage(key) {
 			var oRun = oParagraph.AddText('Hello World');\r\n\
 			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
 			oDocument.InsertContent([oParagraph], false);\r\n\
+            return oRun;\r\n\
 			";
         _script = _script.replaceAll("\r\n", "");
         _script = _script.replaceAll("\n", "");
@@ -94,7 +95,7 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("17");
+        console.log("18");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         window.Asc.plugin.executeMethod("AddContentControl", [2, {
@@ -102,7 +103,7 @@ function getMessage(key) {
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
             "PlaceHolderText": "Patient - Âge",
-            "Alias": "Patient - Âge - Truc",
+            "Alias": "Patient - Âge",
             "Color.R": 255,
             "Color.G": 124,
             "Color.B": 74
