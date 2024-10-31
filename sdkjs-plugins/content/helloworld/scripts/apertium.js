@@ -97,7 +97,7 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("ET ENFIN ICI");
+        console.log("1");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
 	};
