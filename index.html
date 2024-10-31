@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+    <title>Local OO</title>
+    <script type="text/javascript" src="http://localhost:12344/web-apps/apps/api/documents/api.js"></script>
+    <script type="text/javascript" src="./sdkjs.js"></script>
+    <script type="text/javascript" src="./sdkui.js"></script>
+</head>
+<body style="height: 100%; margin: 0;">
+    <div id="placeholder" style="height: 100%"></div>    
+
+    <script type="text/javascript">
+
+        const config = {
+            document: {
+                fileType: "docx",
+                key: "unique-doc-key",
+                title: "Sample Document",
+                url: "https://file-examples.com/storage/fe000f31f067211aa98c65c/2017/02/file-sample_100kB.docx"
+            },
+            editorConfig: {
+                mode: "edit",
+                callbackUrl: "http://localhost:3000"
+                /*plugins: {
+                        pluginsData: [
+                            "https://github.com/hugoroche/onlyoffice.github.io/tree/master/sdkjs-plugins/content/helloworld/config.json"
+                        ]
+                    }*/
+                
+            }
+        };
+        const editor = new DocsAPI.DocEditor("placeholder", config);
+    </script>
+</body>
+</html>
+<!-- docker run -i -t -d -p 12344:80 --restart=always -e JWT_ENABLED=false -e ALLOW_PRIVATE_IP_ADDRESS=true -e JWT_HEADER=AuthorizationJWT onlyoffice/documentserver-de -->

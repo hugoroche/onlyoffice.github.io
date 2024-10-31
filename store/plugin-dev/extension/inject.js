@@ -1,6 +1,6 @@
 (function(window, undefined) {
-	var URL_TO_PLUGIN = "";
-	
+	var URL_TO_PLUGIN = "/etc/testing_plugin/helloworld/";
+	console.log("ALLO TOP TOP TOP ?????");
 	var xhrObj = new XMLHttpRequest();
 	xhrObj.open('GET', URL_TO_PLUGIN + "config.json", false);
 	xhrObj.send('');
