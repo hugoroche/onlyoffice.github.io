@@ -93,9 +93,9 @@ function getMessage(key) {
             }
         };
 
-        console.log("12");
+        console.log("13");
         // replace content
-        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
+        //window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
         window.Asc.plugin.executeMethod("AddContentControl", [2, {
             "Tag": "gap;lkasf",
             "Lock": 3,
