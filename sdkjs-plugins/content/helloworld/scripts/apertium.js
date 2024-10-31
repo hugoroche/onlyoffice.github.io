@@ -93,9 +93,9 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("2");
+        console.log("3");
         // replace content
-        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
+        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [_scriptObject]);
 	};
 
     window.Asc.plugin.onThemeChanged = function(theme)
