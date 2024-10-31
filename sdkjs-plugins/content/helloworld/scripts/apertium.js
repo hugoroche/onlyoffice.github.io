@@ -88,6 +88,16 @@ function getMessage(key) {
         _script = _script.replaceAll("\r\n", "");
         _script = _script.replaceAll("\n", "");
 
+        var scripto = {
+            "Type": "ContentControl",
+            "Elements": [
+                {
+                    "Type": "Paragraph",
+                    "Text": "This is the paragraph text within the ContentControl."
+                }
+            ]
+        };   
+
         var _scriptObject = {
             "Props": {
                 "Tag": "gap;patient",
@@ -96,10 +106,11 @@ function getMessage(key) {
                 "Id": id,
                 "PlaceholderText": "Patient - Age"
             },
-            "Script": _script
+            "Script": scripto
         };
+     
 
-        console.log("28");
+        console.log("29");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
