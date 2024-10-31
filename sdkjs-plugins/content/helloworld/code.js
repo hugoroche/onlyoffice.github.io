@@ -29,12 +29,6 @@
         // register message listener
         // this listener will be able to intercept actions outside the iframe of the plugin and posted to the iframe of the onlyoffice editor
         // this allows Pulse Vaadin based javascript component to communicate with the onlyoffice editor for adding custom content controls
-        window.parent.addEventListener('message', event => {
-            if (event.data.action && event.data.action == 'insert_contentcontrol') {
-                _Control = event.data;
-                window.Asc.plugin.executeMethod("AddContentControl", [event.data.wrap, {"Lock": 3}]);
-            }
-        });
     };
 
     // this method is called once the content control has been added to the document
