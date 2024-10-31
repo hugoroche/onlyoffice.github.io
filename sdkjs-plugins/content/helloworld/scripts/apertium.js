@@ -74,7 +74,6 @@ function getMessage(key) {
 	window.Asc.plugin.init = function(text)
 	{
         console.log("ALLO SUPER ALLO ENORME ALLO");
-        console.log("BLOUP");
         var _script = "\r\n\
 			var oDocument = Api.GetDocument();\r\n\
 			var oParagraph = Api.CreateParagraph();\r\n\
@@ -82,11 +81,8 @@ function getMessage(key) {
 			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
 			oDocument.InsertContent([oParagraph], false);\r\n\
 			";
-        
-        console.log("ICI");
         _script = _script.replaceAll("\r\n", "");
         _script = _script.replaceAll("\n", "");
-        console.log("LA");
 
         var _scriptObject = {
             "Props": {
@@ -97,7 +93,7 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("1");
+        console.log("2");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
 	};
