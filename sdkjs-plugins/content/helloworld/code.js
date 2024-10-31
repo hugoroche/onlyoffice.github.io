@@ -47,7 +47,7 @@
         };
 
         // replace content
-        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
+        //window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
         }, true)
     };
 
