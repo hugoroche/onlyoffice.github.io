@@ -91,18 +91,21 @@ function getMessage(key) {
                 "InternalId": crypto.randomUUID(),
                 "PlaceholderText": "Patient - Age"
             },
-            "Script": ""
+            "Script": _script
         };
 
-        console.log("16");
+        console.log("17");
         // replace content
-        //window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
+        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         window.Asc.plugin.executeMethod("AddContentControl", [2, {
             "Tag": "gap;lkasf",
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
-            "PlaceHolderText": "Testing le test",
-            "Color": (255, 124, 174)
+            "PlaceHolderText": "Patient - Âge",
+            "Alias": "Patient - Âge - Truc",
+            "Color.R": 255,
+            "Color.G": 124,
+            "Color.B": 74
         }]);
 	};
 
