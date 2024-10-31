@@ -82,9 +82,6 @@ function getMessage(key) {
 			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
             var oSubBlockLvlSdt =oRun.InsertInContentControl(1);\r\n\
 			oDocument.InsertContent([oSubBlockLvlSdt]);\r\n\
-            var aContentControls = oDocument.GetAllContentControls();\r\n\
-            console.log(\"YOUPI\", aContentControls);\r\n\
-            console.log(\"YOUPI 2\", aContentControls.filter(c=> c.ye.ga.Wa === "+id+"));\r\n\
 			";
         _script = _script.replaceAll("\r\n", "");
         _script = _script.replaceAll("\n", "");
