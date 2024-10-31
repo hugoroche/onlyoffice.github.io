@@ -80,7 +80,7 @@ function getMessage(key) {
 			var oParagraph = Api.CreateParagraph();\r\n\
 			var oRun = oParagraph.AddText('Hello World');\r\n\
 			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
-			oDocument.InsertContent([oParagraph], true);\r\n\
+			oDocument.InsertContent([oParagraph], false);\r\n\
 			";
         
         console.log("ICI");
