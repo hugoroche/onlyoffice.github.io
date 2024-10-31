@@ -91,12 +91,13 @@ function getMessage(key) {
                 "Tag": "gap;patient",
                 "Lock": 3,
                 "InternalId": crypto.randomUUID(),
+                "Id": 845279,
                 "PlaceholderText": "Patient - Age"
             },
             "Script": _script
         };
 
-        console.log("20");
+        console.log("21");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         window.Asc.plugin.executeMethod("AddContentControl", [2, {
