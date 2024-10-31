@@ -76,14 +76,15 @@ function getMessage(key) {
         console.log("ALLO SUPER ALLO ENORME ALLO");
         const id = crypto.randomUUID();
         var _script = "\r\n\
-            var oDocument = Api.GetDocument();\r\n\
-            var oParagraph = Api.CreateParagraph();\r\n\
-            oParagraph.AddText('Hello World');\r\n\
-            oParagraph.SetShd(\"clear\", 255, 124, 74);\r\n\
-            var oSubBlockLvlSdt = Api.CreateContentControl(); \r\n\
-            oSubBlockLvlSdt.AddElement(oParagraph);\r\n\
-            oDocument.AddElement(oSubBlockLvlSdt);\r\n\
-        ";
+			var oDocument = Api.GetDocument();\r\n\
+			var oParagraph = Api.CreateParagraph();\r\n\
+			var oRun = oParagraph.AddText('Hello World');\r\n\
+			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
+            var oSubBlockLvlSdt =oParagraph.InsertInContentControl(1);\r\n\
+			oDocument.InsertContent([oSubBlockLvlSdt]);\r\n\
+            var aContentControls = oDocument.GetAllContentControls();\r\n\
+            console.log(\"YOUPI 2 \" + aContentControls.filter(c=> c.ye.ga.Wa === "+id+"));\r\n\
+			";
         _script = _script.replaceAll("\r\n", "");
         _script = _script.replaceAll("\n", ""); 
 
