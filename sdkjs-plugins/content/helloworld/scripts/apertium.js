@@ -73,10 +73,6 @@ function getMessage(key) {
 
 	window.Asc.plugin.init = function(text)
 	{
-		if (window.Asc.plugin.info.isViewMode)
-			document.getElementById("paste").classList.add('hidden');
-
-	    txt = text;
         console.log("ALLO SUPER ALLO ENORME ALLO");
 	};
 
