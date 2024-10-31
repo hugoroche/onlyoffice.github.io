@@ -75,22 +75,20 @@ function getMessage(key) {
 	{
         console.log("ALLO SUPER ALLO ENORME ALLO");
         const bloubId = crypto.randomUUID();
-        var _script = "\r\n\
-			var oDocument = Api.GetDocument();\r\n\
-			var oParagraph = Api.CreateParagraph();\r\n\
-			var oRun = oParagraph.AddText('Hello World');\r\n\
-			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
-            var oSubBlockLvlSdt =oParagraph.InsertInContentControl(1);\r\n\
-			oDocument.InsertContent([oSubBlockLvlSdt]);\r\n\
-            var aContentControls = oDocument.GetAllContentControls();\r\n\
-            for (var i = 0; i < aContentControls.length; i++) {\r\n\
-                console.log(\"YOUPI 3 \", "+bloubId+");\r\n\
-                console.log(\"YOUPI 2 \", aContentControls[i].ye.ga.Wa);\r\n\
-            }\r\n\
-			";
-        _script = _script.replaceAll("\r\n", "");
-        _script = _script.replaceAll("\n", ""); 
-
+        var _script = `
+        var oDocument = Api.GetDocument();
+			var oParagraph = Api.CreateParagraph();
+			var oRun = oParagraph.AddText('Hello World');
+			oRun.SetShd("clear",255, 124, 74);
+            var oSubBlockLvlSdt =oParagraph.InsertInContentControl(1);
+			oDocument.InsertContent([oSubBlockLvlSdt]);
+            var aContentControls = oDocument.GetAllContentControls();
+            for (var i = 0; i < aContentControls.length; i++) {
+                console.log("YOUPI 3 ", "${bloubId}");
+                console.log("YOUPI 2 ", aContentControls[i].ye.ga.Wa);
+            }
+        `;
+        
         var _scriptObject = {
             "Props": {
                 "Tag": "gap;patient",
