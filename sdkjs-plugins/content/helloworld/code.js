@@ -26,7 +26,7 @@
     // plugin init method
     window.Asc.plugin.init = function init() {
         this.callCommand(() => {
-            var script = "\r\n\
+            /*var script = "\r\n\
           const oDocument = Api.GetDocument();\r\n\
           const oParagraph = Api.CreateParagraph();\r\n\
           const oRun = oParagraph.AddText(\"Hello world!\");\r\n\
@@ -44,7 +44,7 @@
                 "InternalId": crypto.randomUUID()
             },
             "Script": script
-        };
+        };*/
 
         // replace content
         //window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
