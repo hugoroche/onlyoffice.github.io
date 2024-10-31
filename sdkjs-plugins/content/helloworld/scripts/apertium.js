@@ -84,7 +84,7 @@ function getMessage(key) {
 			oDocument.InsertContent([oSubBlockLvlSdt]);\r\n\
             var aContentControls = oDocument.GetAllContentControls();\r\n\
             for (var i = 0; i < aContentControls.length; i++) {\r\n\
-                console.log(\"YOUPI 2 \" + aContentControls[i].ge.ye.ga.Wa);\r\n\
+                console.log(\"YOUPI 2 \" + aContentControls[i]);\r\n\
             }\r\n\
 			";
         _script = _script.replaceAll("\r\n", "");
@@ -102,7 +102,7 @@ function getMessage(key) {
         };
     
 
-        console.log("32");
+        console.log("33");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
