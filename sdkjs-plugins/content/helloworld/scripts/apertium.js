@@ -94,7 +94,7 @@ function getMessage(key) {
             "Script": ""
         };
 
-        console.log("15");
+        console.log("16");
         // replace content
         //window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
         window.Asc.plugin.executeMethod("AddContentControl", [2, {
@@ -102,7 +102,7 @@ function getMessage(key) {
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
             "PlaceHolderText": "Testing le test",
-            "Color": rgb(255, 124, 174)
+            "Color": (255, 124, 174)
         }]);
 	};
 
