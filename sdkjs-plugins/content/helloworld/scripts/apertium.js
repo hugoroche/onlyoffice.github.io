@@ -84,7 +84,7 @@ function getMessage(key) {
 			oDocument.InsertContent([oSubBlockLvlSdt]);
             var aContentControls = oDocument.GetAllContentControls();
             for (var i = 0; i < aContentControls.length; i++) {
-                if( aContentControls[i].ye.ga.Wa === ${bloubId}){
+                if( aContentControls[i].ye.ga.Wa === "${bloubId}"){
                     console.log("YOUPI 2 ", aContentControls[i].ye.ga.Wa);
                 }
             }
@@ -102,7 +102,7 @@ function getMessage(key) {
         };
     
 
-        console.log("37");
+        console.log("38");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
