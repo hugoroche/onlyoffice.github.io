@@ -79,8 +79,7 @@ function getMessage(key) {
 			var oParagraph = Api.CreateParagraph();\r\n\
 			var oRun = oParagraph.AddText('Hello World');\r\n\
 			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
-			oDocument.InsertContent([oParagraph], false);\r\n\
-            return oRun;\r\n\
+			this.InsertContent([oParagraph], false);\r\n\
 			";
         _script = _script.replaceAll("\r\n", "");
         _script = _script.replaceAll("\n", "");
@@ -95,7 +94,7 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("18");
+        console.log("19");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         window.Asc.plugin.executeMethod("AddContentControl", [2, {
