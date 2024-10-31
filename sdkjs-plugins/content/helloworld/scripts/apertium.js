@@ -84,7 +84,8 @@ function getMessage(key) {
             for (var i = 0; i < aContentControls.length; i++) {
                 if(aContentControls[i].ye.ga.Wa === "${contentControlId}"){
                     console.log("YOUPI 2 ", aContentControls[i]);
-                    aContentControls[i].Push(oRun);
+                    const stdRun = aContentControls[i].AddText('Hello World');
+                    stdRun.SetShd("clear",255, 124, 74);
                 }
             }
         `;
@@ -103,7 +104,7 @@ function getMessage(key) {
 
         console.log("46");
         // replace content
-        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
+        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
             "Tag": "gap;lkasf",
             "Lock": 3,
