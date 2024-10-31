@@ -80,23 +80,13 @@ function getMessage(key) {
 			var oParagraph = Api.CreateParagraph();\r\n\
 			var oRun = oParagraph.AddText('Hello World');\r\n\
 			oRun.SetShd(\"clear\",255, 124, 74);\r\n\
-            var oSubBlockLvlSdt =oParagraph.InsertInContentControl(0);\r\n\
+            var oSubBlockLvlSdt =oParagraph.InsertInContentControl(1);\r\n\
 			oDocument.InsertContent([oSubBlockLvlSdt]);\r\n\
             var aContentControls = oDocument.GetAllContentControls();\r\n\
-            console.log(\"YOUPI 2 \" + aContentControls.filter(c=> c.ye.ga.Wa === 12345));\r\n\
+            console.log(\"YOUPI 2 \" + aContentControls.filter(c=> c.ye.ga.Wa === "+id+"));\r\n\
 			";
         _script = _script.replaceAll("\r\n", "");
-        _script = _script.replaceAll("\n", "");
-
-        var scripto = {
-            "Type": "ContentControl",
-            "Elements": [
-                {
-                    "Type": "Paragraph",
-                    "Text": "This is the paragraph text within the ContentControl."
-                }
-            ]
-        };   
+        _script = _script.replaceAll("\n", ""); 
 
         var _scriptObject = {
             "Props": {
@@ -106,11 +96,11 @@ function getMessage(key) {
                 "Id": id,
                 "PlaceholderText": "Patient - Age"
             },
-            "Script": scripto
+            "Script": _script
         };
-     
+    
 
-        console.log("29");
+        console.log("30");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
