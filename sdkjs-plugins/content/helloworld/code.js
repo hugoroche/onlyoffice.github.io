@@ -35,6 +35,7 @@
 
           script = script.replaceAll("\r\n", "");
           script = script.replaceAll("\n", "");
+          console.log("SCRIPT", script);
 
           var _scriptObject = {
             "Props": {
