@@ -93,17 +93,15 @@ function getMessage(key) {
             "Script": _script
         };
 
-        var newContentControl = {
-            "Tag": "gap;patient",
+        console.log("8");
+        // replace content
+        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
+        window.Asc.plugin.executeMethod("AddContentControl", 1, {
+            "Tag": "gap;lkasf",
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
-            "PlaceHolderText": "AUAUAUAU",
-            "Appearance": 1
-        };
-
-        console.log("6");
-        // replace content
-        window.Asc.plugin.executeMethod("AddContentControl", 1, newContentControl);
+            "PlaceHolderText": "Testing le test"
+        });
 	};
 
     window.Asc.plugin.onThemeChanged = function(theme)
