@@ -84,7 +84,7 @@ function getMessage(key) {
             for (var i = 0; i < aContentControls.length; i++) {
                 if(aContentControls[i].ye.ga.Wa === "${bloubId}"){
                     console.log("YOUPI 2 ");
-                    aContentControls[i].AddElement(oRun);
+                    aContentControls[i].InsertContent(oRun);
                 }
             }
         `;
@@ -101,7 +101,7 @@ function getMessage(key) {
         };
     
 
-        console.log("40");
+        console.log("41");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
