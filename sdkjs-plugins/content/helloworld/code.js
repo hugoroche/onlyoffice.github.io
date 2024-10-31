@@ -24,54 +24,30 @@
     var _Control = null;
 
     // plugin init method
-    window.Asc.plugin.init = function () {
+    window.Asc.plugin.init = function init() {
+        this.callCommand(() => {
+            var script = "\r\n\
+          const oDocument = Api.GetDocument();\r\n\
+          const oParagraph = Api.CreateParagraph();\r\n\
+          const oRun = oParagraph.AddText(\"Hello world!\");\r\n\
+          oRun.setShd(\"clear\", 124, 234, 52);\r\n\
+          oDocument.InsertContent([oParagraph], true);"
 
-        // register message listener
-        // this listener will be able to intercept actions outside the iframe of the plugin and posted to the iframe of the onlyoffice editor
-        // this allows Pulse Vaadin based javascript component to communicate with the onlyoffice editor for adding custom content controls
-    };
+          script = script.replaceAll("\r\n", "");
+          script = script.replaceAll("\n", "");
 
-    // this method is called once the content control has been added to the document
-    // now we will set the content control content, creating a StdRun entry in the docx XML format
-    window.Asc.plugin.onMethodReturn = function (returnValue) {
-        var _plugin = window.Asc.plugin;
+          var _scriptObject = {
+            "Props": {
+                "Tag": "gap;bidule",
+                "Lock": 3,
+                "InternalId": crypto.randomUUID()
+            },
+            "Script": script
+        };
 
-        if (_plugin.info.methodName == "AddContentControl") {
-            if (_Control) {
-
-                // create the color
-                var color = hexToRgb(_Control.color);
-
-                // create the script to insert content as a SdtRun inside the content control
-                var _script = "\r\n\
-			var oDocument = Api.GetDocument();\r\n\
-			var oParagraph = Api.CreateParagraph();\r\n\
-			var oRun = oParagraph.AddText(\' " + _Control.label + " \');\r\n\
-			oRun.SetShd(\"clear\","+color.r+","+color.g+","+color.b+");\r\n\
-			oDocument.InsertContent([oParagraph], true);\r\n\
-			";
-
-                _script = _script.replaceAll("\r\n", "");
-                _script = _script.replaceAll("\n", "");
-
-                var _scriptObject = {
-                    "Props": {
-                        "Tag": _Control.tag,
-                        "Lock": 3,
-                        "InternalId": returnValue.InternalId
-                    },
-                    "Script": _script
-                };
-
-                // replace content
-                window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
-
-                // move to the end
-                //window.Asc.plugin.executeMethod ("MoveCursorToEnd", [false]);
-
-                _Control = null;
-            }
-        }
+        // replace content
+        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
+        }, true)
     };
 
     window.Asc.plugin.button = function (id) {
