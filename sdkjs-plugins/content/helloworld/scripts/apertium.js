@@ -94,15 +94,16 @@ function getMessage(key) {
             "Script": ""
         };
 
-        console.log("14");
+        console.log("15");
         // replace content
-        window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
-        /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
+        //window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]], true);
+        window.Asc.plugin.executeMethod("AddContentControl", [2, {
             "Tag": "gap;lkasf",
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
-            "PlaceHolderText": "Testing le test"
-        }]);*/
+            "PlaceHolderText": "Testing le test",
+            "Color": rgb(255, 124, 174)
+        }]);
 	};
 
     window.Asc.plugin.onThemeChanged = function(theme)
