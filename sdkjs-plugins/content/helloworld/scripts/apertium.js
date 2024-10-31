@@ -84,11 +84,12 @@ function getMessage(key) {
 			oDocument.InsertContent([oSubBlockLvlSdt]);
             var aContentControls = oDocument.GetAllContentControls();
             for (var i = 0; i < aContentControls.length; i++) {
-                console.log("YOUPI 3 ", "${bloubId}");
-                console.log("YOUPI 2 ", aContentControls[i].ye.ga.Wa);
+                if( aContentControls[i].ye.ga.Wa === ${bloubId}){
+                    console.log("YOUPI 2 ", aContentControls[i].ye.ga.Wa);
+                }
             }
         `;
-        
+
         var _scriptObject = {
             "Props": {
                 "Tag": "gap;patient",
@@ -101,7 +102,7 @@ function getMessage(key) {
         };
     
 
-        console.log("36");
+        console.log("37");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject], true]);
         /*window.Asc.plugin.executeMethod("AddContentControl", [2, {
