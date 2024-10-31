@@ -93,15 +93,15 @@ function getMessage(key) {
             "Script": _script
         };
 
-        console.log("8");
+        console.log("9");
         // replace content
         window.Asc.plugin.executeMethod("InsertAndReplaceContentControls", [[_scriptObject]]);
-        window.Asc.plugin.executeMethod("AddContentControl", 1, {
+        window.Asc.plugin.executeMethod("AddContentControl", 1, [{
             "Tag": "gap;lkasf",
             "Lock": 3,
             "InternalId": crypto.randomUUID(),
             "PlaceHolderText": "Testing le test"
-        });
+        }]);
 	};
 
     window.Asc.plugin.onThemeChanged = function(theme)
