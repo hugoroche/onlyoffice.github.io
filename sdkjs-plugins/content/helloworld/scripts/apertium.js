@@ -84,7 +84,7 @@ function getMessage(key) {
             for (var i = 0; i < aContentControls.length; i++) {
                 if(aContentControls[i].ye.ga.Wa === "${contentControlId}"){
                     console.log("YOUPI 2 ", aContentControls[i]);
-                    const stdRun = aContentControls[i].AddText('Hello World');
+                    const stdRun = aContentControls[i].AddText(oRun);
                     debugger;
                     stdRun.SetShd("clear",255, 124, 74);
                 }
